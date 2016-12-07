@@ -1,4 +1,4 @@
-title: Modify Info.plist file for environment specific settings in Bitrise.io
+title: Modify Info.plist - Environment Changes
 summary: Modifies values in the Info.plist for custom environment-based values.
 description: |-
   Modifies values in the Info.plist for custom environment-based values.
