@@ -13,9 +13,6 @@ if [ ! -f "${plist_path}" ] ; then
   exit 1
 fi
 
-# Vebose
-set -v
-
 # Should Bundle Identifier be modified?
 if [ -n "${bundle_identifier}" ] ; then
   ORIGINAL_BUNDLE_IDENTIFIER="$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "${plist_path}")"
