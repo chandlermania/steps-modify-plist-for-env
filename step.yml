@@ -1,0 +1,48 @@
+title: Modify Info.plist file for environment specific settings in Bitrise.io
+summary: Modifies values in the Info.plist for custom environment-based values.
+description: |-
+  Modifies values in the Info.plist for custom environment-based values.
+website: https://github.com/chandlermania/steps-modify-plist-for-env
+source_code_url: https://github.com/chandlermania/steps-modify-plist-for-env
+support_url: https://github.com/chandlermania/steps-modify-plist-for-env/issues
+host_os_tags:
+  - osx-10.10
+project_type_tags:
+  - ios
+type_tags:
+  - build
+  - xcode
+  - plist
+deps:
+  check_only:
+  - name: xcode
+run_if: ".IsCI"
+inputs:
+  - plist_path: ""
+    opts:
+      title: "Full path to Info.plist file"
+      description: |-
+        Path to the project's Info.plist file. (Example: "./iOS/Info.plist")
+      is_expand: true
+      is_required: true
+  - bundle_identifier:
+    opts:
+      title: "Modify CFBundleIdentifier?"
+      description: |-
+        This is the value that will be used to set the Bundler Identifier.
+
+        If field is left empty, this step will be skipped and the Bundle Identifier
+        will not be modified.
+      is_expand: true
+      is_required: false
+  - bundle_display_name:
+    opts:
+      title: "Modify CFBundleDisplayName?"
+      description: |-
+        This is the value that will be used to set the App Name that is
+        displayed on a device under the App icon (ex. QA - MyApp, DEV - MyApp, etc.).
+
+        If field is left empty, this step will be skipped and the Bundle Identifier
+        will not be modified.
+      is_expand: true
+      is_required: false
