@@ -26,3 +26,8 @@ if [ -n "${bundle_display_name}" ] ; then
   /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${bundle_display_name}" "${plist_path}"
   echo " (i) Bundle Display Name changed from $ORIGINAL_BUNDLE_NAME to ${bundle_display_name}"
 fi
+
+if [ -n "${build_number}" ] ; then
+  /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${build_number}" "${plist_path}"
+  echo " (i) Bundle Version set to ${build_number}"
+fi

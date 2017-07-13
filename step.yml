@@ -46,3 +46,10 @@ inputs:
         will not be modified.
       is_expand: true
       is_required: false
+  - build_number:
+    opts:
+      title: "CFBundleVersion Build Number"
+      description: |-
+        Sets the value of CFBundleVersion in the Info.plist file to the value when set.
+      is_expand: true
+      is_required: false
